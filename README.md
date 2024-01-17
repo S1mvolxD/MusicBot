@@ -2,9 +2,9 @@
 ## MusicBot
 MusicBot on Aoi.js
 
-# Install Aoi.js
+# Install
 ```
-npm i aoi.js@latest
+1. npm i aoi.js@latest @akarui/aoi.music ffmpeg-static opusscript
 ```
 
 # Variables
