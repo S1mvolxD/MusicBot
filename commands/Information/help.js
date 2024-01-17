@@ -4,7 +4,7 @@ module.exports = [{
   $author[List of commands;$userAvatar[$clientID]]
 
   $addField[Settings;\`prefix\`;false]
-  $addField[Music;\`play\`, \`skip\`, \`stop\`, \`leave\`, \`join\`, \`volume\`, \`autoplay\`;false]
+  $addField[Music;\`play\`, \`skip\`, \`stop\`, \`leave\`, \`join\`, \`volume\`;false]
   $addField[Information;\`stats\`, \`help\`, \`ping\`;false]
 
   $color[$getGuildVar[color]]
