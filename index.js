@@ -1,4 +1,5 @@
 const { AoiClient, LoadCommands } = require("aoi.js");
+const { AoiVoice, PlayerEvents, PluginName, Cacher, Filter } = require("@aoijs/aoi.music");
 
 const client = new AoiClient({
   token: "XXX-XXX-XXX-XXX-XXX-XXX",
@@ -14,14 +15,11 @@ const client = new AoiClient({
   },
 });
 
-
+//Variables:
 require("./handler/variables.js")(client);
 require("./handler/status.js")(client);
 
-//Музыка:
-const { Manager } = require("@akarui/aoi.music");
-const { AoiVoice, PlayerEvents, PluginName, Cacher, Filter } = require("@akarui/aoi.music");
-
+//Music:
 const voice = new AoiVoice(client, {
   searchOptions: {
     soundcloudClientId: "XXX-XXX-XXX-XXX-XXX-XXX", // optional
@@ -32,12 +30,13 @@ const voice = new AoiVoice(client, {
     soundcloudLikeTrackLimit: 200,
   },
 });
-
+//Loader:
 const loader = new LoadCommands(client);
 loader.setColors(loader.themes.default);
 loader.load(client.cmd, "./commands/")
 loader.load(voice.cmds, "./voice/");
 
+//Events Music
 voice.addEvent(PlayerEvents.TrackStart);
 voice.addEvent(PlayerEvents.TrackEnd);
 voice.addEvent(PlayerEvents.QueueStart);
