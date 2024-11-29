@@ -21,14 +21,16 @@ require("./handler/status.js")(client);
 
 //Music:
 const voice = new AoiVoice(client, {
-  searchOptions: {
-    soundcloudClientId: "XXX-XXX-XXX-XXX-XXX-XXX", // optional
-    youtubegl: "US",
-  },
-  requestOptions: {
-    offsetTimeout: 0,
-    soundcloudLikeTrackLimit: 200,
-  },
+    requestOptions: {
+    	offsetTimeout: 0,
+    	soundcloudLikeTrackLimit: 0,
+   	 	spotifyPlaylistLimit: 0,
+    	youtubePlaylistLimit: 0,
+    },
+    searchOptions: {
+        youtubeClient: "YTMUSIC",
+        youtubegl: "US",
+    }
 });
 //Loader:
 const loader = new LoadCommands(client);
