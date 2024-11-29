@@ -7,12 +7,10 @@ const client = new AoiClient({
   events: ["onMessage", "onInteractionCreate"],
   database: {
     type: "aoi.db",
-    db: require("@akarui/aoi.db"),
+    db: require("@aoijs/aoi.db"),
+    dbType: "KeyValue",
     tables: ["main"],
-    path: "./database/",
-    extraOptions: {
-      dbType: "KeyValue",
-    },
+    securityKey: "a-32-characters-long-string-here",
   },
 });
 
